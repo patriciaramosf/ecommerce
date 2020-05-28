@@ -1,15 +1,33 @@
 .body{
     height:100vh;
 }
+.header{
+    position: relative;
+    z-index:1;
+}
 .logo{
     width:30px;
     margin-left:5px;
 }
-.hero{
-    min-height: 60%;
-    background-image: url(./../images/zeroImg.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+.navbar{
+    position: fixed;
+    top:0px;
+    width:100vw;
+}
+.app-list{
+    margin:40px;
+}
+.bottom-card{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.prices{
+    font-size:14px;
+}
+.originalPrice{
+    text-decoration:line-through;
+}
+.newPrice{
+    font-weight: bold;
 }
