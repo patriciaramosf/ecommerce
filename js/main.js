@@ -22,6 +22,7 @@ const printItems= () => {
         const contentforOriginalPrice= document.createTextNode(item.prices.noDiscount);
         const contentforNewPrice= document.createTextNode(item.prices.Discount);
         const euro = document.createTextNode('€');
+        const euro1 = document.createTextNode('€');
 
         itemLi.setAttribute('class', 'myCard');
         itemCard.setAttribute('class', 'card');
@@ -36,7 +37,7 @@ const printItems= () => {
         itemoriginalPrice.setAttribute('class', 'originalPrice')
         itemnewPrice.setAttribute('class', 'newPrice')
         itemButton.setAttribute('class', 'btn btn-danger');
-        itemButton.style='position:absolute; left:18px;';
+        itemButton.style='position:absolute; left:18px; color:white';
         itemPrices.setAttribute('class', 'prices');
 
         list.appendChild(itemLi);
@@ -55,9 +56,9 @@ const printItems= () => {
         itemDescription.appendChild(contentforDescription);
         itemButton.appendChild(contentforButton);
         itemoriginalPrice.appendChild(contentforOriginalPrice);
-        itemoriginalPrice.appendChild(euro);
         itemnewPrice.appendChild(contentforNewPrice);
-        itemnewPrice.appendChild(euro);
+        itemnewPrice.appendChild(euro1);
+        itemoriginalPrice.appendChild(euro);
     }
 }
 printItems();
