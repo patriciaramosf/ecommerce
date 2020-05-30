@@ -1,5 +1,6 @@
 .body{
     height:100vh;
+    font-family: 'Roboto', sans-serif;
 }
 li{
     list-style-type: none;
@@ -19,12 +20,26 @@ li{
     width:100vw;
 }
 .hero{
-    height:80vh;
-    background-image: url(./../images/hero.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
+} 
+
+.Info{
+    height:10%;
+    background: rgb(161,5,5);
+    background: linear-gradient(90deg, rgba(161,5,5,1) 0%, rgba(221,52,68,0.9626225490196079) 35%, rgba(255,0,54,1) 100%);
+}
+.list_info{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.list_info p{
+   margin-top:15px;
+   color:white;
+   text-transform: uppercase;
+   font-size:16px;
+   font-weight: 700;
+   padding:4px;
 }
 
 .app-list{
@@ -45,7 +60,7 @@ li{
     text-decoration:line-through;
 }
 .newPrice{
-    font-weight: bold;
+    font-weight: 900;
 }
 
 @media all and (min-width: 700px) {
@@ -53,4 +68,12 @@ li{
         grid-template-columns: 1fr 1fr 1fr;
         margin-left:65px;
     }
+}
+@media all and (min-width: 800px) {
+    .hero img{
+        height:100vh;
+    }
+    .list_info p{
+        font-size:22px;
+     }
 }

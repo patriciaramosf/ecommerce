@@ -12,7 +12,7 @@ export const DATA = [
        {
           id:'2',
           name:'Tuna Roll',
-          description:'One of our best dishes',
+          description:'One of our best dishes.',
           image:'https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
           prices: {
               noDiscount:25,
@@ -32,7 +32,7 @@ export const DATA = [
        {
           id:'4',
           name:'Maki',
-          description:'Our maki',
+          description:'Our maki.',
           image:'https://images.unsplash.com/photo-1577389585302-8a4cad95eff5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
           prices: {
               noDiscount:15,
@@ -42,7 +42,7 @@ export const DATA = [
        {
           id:'7',
           name:'Rice bowl',
-          description:'A basic',
+          description:'A basic.',
           image:'https://images.unsplash.com/photo-1562158074-d16650a22f83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
           prices: {
               noDiscount:15,
@@ -52,7 +52,7 @@ export const DATA = [
        {
           id:'6',
           name:'Avocado Lover',
-          description:'Who doesn´t like avocado?',
+          description:'Who doesn´t like avocado?.',
           image:'https://images.unsplash.com/photo-1585144570564-9629fa5ab791?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1454&q=80',
           prices: {
               noDiscount:15,
@@ -62,7 +62,7 @@ export const DATA = [
        {
           id:'7',
           name:'The gourmet',
-          description:'Oh la la',
+          description:'Oh la la.',
           image:'https://images.unsplash.com/photo-1571936979656-b0b528fe128c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
           prices: {
               noDiscount:15,
