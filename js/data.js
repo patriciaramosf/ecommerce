@@ -72,7 +72,7 @@ export const DATA = [
        {
           id:'8',
           name:'Salad',
-          description:'Be the helthiest.',
+          description:'Be the healthiest.',
           image:'https://images.unsplash.com/photo-1534528696266-aade1e8bae09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',
           prices: {
               noDiscount:15,

@@ -21,6 +21,7 @@ li{
 }
 .hero{
     position: relative;
+    width:100vw;
 } 
 
 .Info{
@@ -49,11 +50,19 @@ li{
     margin-bottom:40px;
     grid-gap:20px;
 }
-
+.card{
+    position: relative;
+    height:380px;
+}
 .prices{
+    position: absolute;
     font-size:14px;
-    margin-left:250px;
-    margin-top:-10px;
+    top:200px;
+    right:10px;
+}
+.btn{
+    position: absolute;
+    bottom:20px;
 }
 .originalPrice{
     text-decoration:line-through;
@@ -65,7 +74,6 @@ li{
 @media all and (min-width: 700px) {
     .app-list{
         grid-template-columns: 1fr 1fr 1fr;
-        margin-left:65px;
     }
 }
 @media all and (min-width: 800px) {
