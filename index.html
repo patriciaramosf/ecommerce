@@ -12,33 +12,24 @@
 
 <body class="body">
     <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">Shopsticks!<img class="logo" src="./images/sushi.png"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-danger my-2 my-sm-0"  type="submit">My cart <i class="fas fa-shopping-cart"></i></button>
-              </form>
-            </div>
+            <form class="form-inline">
+              <button class="btn  btn-outline-danger"  type="submit">My cart <i class="fas fa-shopping-cart"></i></button>
+            </form>
           </nav>
     </header>
     <div class="hero">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./images/zeroImg.jpg" class="d-block w-100" alt="sushiHero">
+              <div class="carousel-item active img-fluid">
+                <img src="./images/zeroImg.jpeg" class="d-block w-100" alt="sushiHero">
               </div>
-              <div class="carousel-item">
-                <img src="./images/oneImg.png" class="d-block w-100" alt="sushiHero">
+              <div class="carousel-item img-fluid">
+                <img src="./images/oneImg.jpg" class="d-block w-100" alt="sushiHero" >
               </div>
-              <div class="carousel-item">
-                <img src="./images/secondImg.jpg" class="d-block w-100" alt="sushiHero">
+              <div class="carousel-item img-fluid">
+                <img src="./images/secondImg.jpeg" class="d-block w-100" alt="sushiHero" >
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -51,22 +42,8 @@
             </a>
           </div>
     </div>
-    <main class="app-list">
-        <div class="card" style="width: 18rem;">
-            <img src="./images/salmon.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Salmon Roll</h5>
-              <p class="card-text">Tasty & Crunchy.</p>
-              <div class="bottom-card">
-                <a href="" class="btn btn-danger">Add to my cart</a>
-                <div class="prices">
-                    <p class="originalPrice">15 euros</p>
-                    <p class="newPrice">4 euros</p>
-                </div>
-            </div>
-            </div>
-          </div>
-    </main>
+    <ul class="app-list">
+    </ul>
     <script type="module" src="../js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
