@@ -51,5 +51,6 @@ li{
 @media all and (min-width: 700px) {
     .app-list{
         grid-template-columns: 1fr 1fr 1fr;
+        margin-left:0px;
     }
 }
