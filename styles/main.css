@@ -18,13 +18,14 @@ li{
     top:0px;
     width:100vw;
 }
-.d-block{
-    max-height:550px;
-} 
- .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    width: 500px;
-    max-height:550px;
-} 
+.hero{
+    height:80vh;
+    background-image: url(./../images/hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
 .app-list{
     display: grid;
