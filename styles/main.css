@@ -143,9 +143,6 @@ li{
         height:100vh;
     }
     .list_info a{
-        font-size:22px;
+        font-size:18px;
      }
-}
-.carousel-control-next, .carousel-control-prev{
-    top:40px;
 }
