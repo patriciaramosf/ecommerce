@@ -18,17 +18,28 @@ li{
 .form-inline{
     position:relative;
 }
-
+#buttonCart{
+    color:#dc3545;
+}
+#buttonCart:hover{
+    color:white;
+}
+#buttonCart:hover +  #cart{
+    display:block;
+}
+#cart{
+    display:none;
+}
 .cartList{
-    display: block;
     position: absolute;
-    right:50px;
+    right:20px;
     top:100%;
-    z-index: 1;
+    z-index: 4;
     background-color: white;
     padding: 20px;
     min-height: 400px;
     min-width: 300px;
+    z-index:1;
 }
 .titles__cartList{
     border-bottom:1px solid lightgray;
@@ -125,6 +136,7 @@ li{
     .Info{
         height:80px;
     }
+
 }
 @media all and (min-width: 800px) {
     .hero img{
@@ -134,8 +146,6 @@ li{
         font-size:22px;
      }
 }
-
-.top{
-    display: flex;
-    flex-direction: column;
+.carousel-control-next, .carousel-control-prev{
+    top:40px;
 }
