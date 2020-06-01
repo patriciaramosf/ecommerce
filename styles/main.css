@@ -2,8 +2,12 @@
     height:100vh;
     font-family: 'Roboto', sans-serif;
 }
+ul{
+    margin:0;
+}
 li{
     list-style-type: none;
+    margin:0;
 }
 .logo{
     width:30px;
@@ -108,10 +112,12 @@ li{
     margin-bottom:40px;
     grid-gap:20px;
     justify-items: center;
+    align-items: center;
 }
 .card{
     position: relative;
     height:380px;
+    margin-right:40px;
 }
 .prices{
     position: absolute;
