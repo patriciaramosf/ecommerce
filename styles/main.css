@@ -28,13 +28,16 @@ li{
 #buttonCart:hover{
     color:white;
 }
-#buttonCart:hover +  #cart{
-    display:block;
+.form-inline #cart{
+    display: none;
 }
-#cart{
-    display:none;
-}
-.cartList{
+.form-inline:hover #cart{
+    display: block;
+    position: absolute;
+    right:0;
+
+    top:100%;
+    z-index: 1;
     position: absolute;
     right:20px;
     top:100%;

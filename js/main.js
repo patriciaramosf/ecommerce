@@ -1,7 +1,6 @@
 import { DATA } from './data.js'
 
-
-const printItems= () => {
+export const printItems= () => {
     for(let item of DATA){
         const list = document.querySelector('.app-list');
         const itemLi = document.createElement('li')
@@ -38,6 +37,7 @@ const printItems= () => {
         itemoriginalPrice.setAttribute('class', 'originalPrice')
         itemnewPrice.setAttribute('class', 'newPrice')
         itemButton.setAttribute('class', 'btn btn-danger');
+        itemButton.setAttribute('id', 'addingtoCart');
         itemButton.style='position:absolute; left:18px; color:white';
         itemPrices.setAttribute('class', 'prices');
 
@@ -62,4 +62,3 @@ const printItems= () => {
         itemoriginalPrice.appendChild(euro);
     }
 }
-printItems();
