@@ -15,6 +15,53 @@ li{
     width:100vw;
     z-index:1;
 }
+.form-inline{
+    position:relative;
+}
+
+.cartList{
+    display: block;
+    position: absolute;
+    right:50px;
+    top:100%;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+.titles__cartList{
+    border-bottom:1px solid lightgray;
+    display:flex;
+    justify-content: space-between;
+}
+.titles__cartList p{
+    margin:20px;
+    font-weight: 300;
+}
+.cleanCart{
+    margin-top: 20px;
+    display: inline-block;
+    height: 38px;
+    color: rgb(85, 85, 85);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 0px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(187, 187, 187);
+    border-image: initial;
+}
 .hero{
     position: relative;
     width:100vw;
@@ -29,16 +76,17 @@ li{
     justify-content: center;
 }
 .list_info{
-    display:flex;
-    align-items: center;
-    margin-top:10px;
+    display: flex;
 }
-.list_info p{
+.list_info a{
    color:white;
    text-transform: uppercase;
    font-size:16px;
    font-weight: 700;
-   margin-left:20px;
+   margin:15px;
+}
+.lis_info a :hover{
+    color:black;
 }
 
 .app-list{
@@ -81,10 +129,12 @@ li{
     .hero img{
         height:100vh;
     }
-    .list_info p{
+    .list_info a{
         font-size:22px;
      }
-     .list_info p{
-        margin-left:100px;
-     }
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
 }

@@ -25,6 +25,7 @@ const printItems= () => {
         const euro1 = document.createTextNode('€');
 
         itemLi.setAttribute('class', 'myCard');
+        itemLi.setAttribute('id', item.id);
         itemCard.setAttribute('class', 'card');
         itemCard.style='width: 18rem';
         itemImg.src=item.image;
