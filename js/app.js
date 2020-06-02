@@ -34,26 +34,26 @@ function getMealInfo(meal){
 function addMealInfo(meal){
 const row = document.createElement('div');
 row.setAttribute('class', 'row');
-const mealImage = document.createElement('span');
-const mealName = document.createElement('span');
-const mealPrice = document.createElement('span');
 const image = document.createElement('img');
 const name = document.createElement('h5');
 const price = document.createElement('p');
+const button = document.createElement('div');
+const nameText= document.createTextNode(meal.name);
+const priceText= document.createTextNode(meal.prices);
+const buttonText= document.createTextNode('x');
+
+button.setAttribute('class', 'cartButton');
 image.setAttribute('class', 'cartImg');
 name.setAttribute('class','cartName');
 price.setAttribute('class','cartPrice');
-const nameText= document.createTextNode(meal.name);
-const priceText= document.createTextNode(meal.prices);
 
 image.src=meal.image;
 name.appendChild(nameText);
 price.appendChild(priceText);
-mealImage.appendChild(image);
-mealName.appendChild(name);
-mealPrice.appendChild(price);
-row.appendChild(mealImage);
-row.appendChild(mealName);
-row.appendChild(mealPrice);
+button.appendChild(buttonText);
+row.appendChild(image);
+row.appendChild(name);
+row.appendChild(price);
+row.appendChild(button);
 cartList.appendChild(row);
 }

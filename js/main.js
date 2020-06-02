@@ -36,7 +36,7 @@ export const printItems= () => {
         itemLi.setAttribute('class', 'myCard');
         itemLi.setAttribute('id', item.id);
         select.setAttribute('class', 'select');
-        select.style='position:absolute; top:210px; right:10px;'
+        select.style='position:absolute; top:230px; right:10px;'
         itemCard.setAttribute('id', item.id);
         itemCard.setAttribute('class', 'card');
         itemCard.style='width: 18rem';
