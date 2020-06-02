@@ -25,13 +25,11 @@ export const printItems= () => {
         const contentforButton= document.createTextNode('Add to my cart');
         const contentforOriginalPrice= document.createTextNode(item.prices.noDiscount);
         const contentforNewPrice= document.createTextNode(item.prices.Discount);
-        const euro = document.createTextNode('€');
-        const euro1 = document.createTextNode('€');
-        const textOption1 = document.createTextNode(1);
-        const textOption2 = document.createTextNode(2);
-        const textOption3 = document.createTextNode(3);
-        const textOption4 = document.createTextNode(4);
-        const textOption5 = document.createTextNode(5);
+        const textOption1 = document.createTextNode('1');
+        const textOption2 = document.createTextNode('2');
+        const textOption3 = document.createTextNode('3');
+        const textOption4 = document.createTextNode('4');
+        const textOption5 = document.createTextNode('5');
 
         itemLi.setAttribute('class', 'myCard');
         itemLi.setAttribute('id', item.id);
@@ -79,13 +77,11 @@ export const printItems= () => {
         itemTopCard.appendChild(itemPrices);
         itemPrices.appendChild(itemoriginalPrice);
         itemPrices.appendChild(itemnewPrice);
-
         itemName.appendChild(contentforName);
         itemDescription.appendChild(contentforDescription);
         itemButton.appendChild(contentforButton);
         itemoriginalPrice.appendChild(contentforOriginalPrice);
         itemnewPrice.appendChild(contentforNewPrice);
-        itemnewPrice.appendChild(euro1);
-        itemoriginalPrice.appendChild(euro);
+        
     }
 }
