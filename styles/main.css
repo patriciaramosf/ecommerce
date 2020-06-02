@@ -57,6 +57,30 @@ li{
     margin:20px;
     font-weight: 300;
 }
+.body__cartList{
+    display:flex;
+    flex-direction: column;
+    margin:10px 10px 10px 10px;
+}
+.row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.cartImg{
+    width:60px;
+    height:60px;
+    border-radius: 10px;
+}
+.cartName{
+    font-size:12px;
+}
+.cartPrice{
+    font-size:12px;
+}
 .cleanCart{
     margin-top: 20px;
     display: inline-block;
