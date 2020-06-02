@@ -7,7 +7,6 @@ export const printItems= () => {
         const itemCard = document.createElement('div')
         const itemImg = document.createElement('img')
         const itemTopCard = document.createElement('div')
-        const itemBottomCard = document.createElement('div')
         const itemName = document.createElement('h5')
         const itemDescription = document.createElement('p')
         const itemoriginalPrice = document.createElement('p')
@@ -25,13 +24,13 @@ export const printItems= () => {
 
         itemLi.setAttribute('class', 'myCard');
         itemLi.setAttribute('id', item.id);
+        itemCard.setAttribute('id', item.id);
         itemCard.setAttribute('class', 'card');
         itemCard.style='width: 18rem';
         itemImg.src=item.image;
         itemImg.setAttribute('class', 'card-img-top');
         itemImg.setAttribute('alt', item.name);
         itemTopCard.setAttribute('class', 'card-body');
-        itemBottomCard.setAttribute('class', 'bottom-card');
         itemName.setAttribute('class', 'card-title');
         itemDescription.setAttribute('class', 'card-text');
         itemoriginalPrice.setAttribute('class', 'originalPrice')
@@ -47,9 +46,8 @@ export const printItems= () => {
         itemCard.appendChild(itemTopCard);
         itemTopCard.appendChild(itemName);
         itemTopCard.appendChild(itemDescription);
-        itemCard.appendChild(itemBottomCard);
-        itemBottomCard.appendChild(itemButton);
-        itemBottomCard.appendChild(itemPrices);
+        itemTopCard.appendChild(itemButton);
+        itemTopCard.appendChild(itemPrices);
         itemPrices.appendChild(itemoriginalPrice);
         itemPrices.appendChild(itemnewPrice);
 
