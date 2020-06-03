@@ -7,7 +7,6 @@ const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
 const totalPrice = document.querySelector('.totalPrice');
 const newPrice = document.querySelectorAll('.newPrice');
-const newPriceArr = Array.prototype.slice.call(newPrice);
 
 addListenerButtons();
 
@@ -33,8 +32,7 @@ function getMealInfo(meal){
         select:meal.querySelector('select'),
     }
     addMealInfo(mealInfo);
-  /*   increaseTotalCart(newPriceArr)
-    console.log(newPriceArr[2]); */
+    /* increaseTotalCart(newPrice); */
 }
 
 function addMealInfo(meal){

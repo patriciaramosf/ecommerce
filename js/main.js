@@ -9,8 +9,8 @@ export const printItems= () => {
         const itemTopCard = document.createElement('div');
         const itemName = document.createElement('h5');
         const itemDescription = document.createElement('p');
-        const itemoriginalPrice = document.createElement('p');
-        const itemnewPrice = document.createElement('p');
+        const itemoriginalPrice = document.createElement('li');
+        const itemnewPrice = document.createElement('li');
         const itemButton = document.createElement('a');
         const itemPrices = document.createElement('div');
         const select = document.createElement('select');
@@ -51,6 +51,7 @@ export const printItems= () => {
         itemDescription.setAttribute('class', 'card-text');
         itemoriginalPrice.setAttribute('class', 'originalPrice');
         itemnewPrice.setAttribute('class', 'newPrice');
+        itemnewPrice.value=item.prices.Discount;
         itemButton.setAttribute('class', 'btn btn-danger');
         itemButton.setAttribute('id', 'addingtoCart');
         itemButton.style='position:absolute; left:18px; color:white';
@@ -83,4 +84,5 @@ export const printItems= () => {
         itemoriginalPrice.appendChild(contentforOriginalPrice);
         itemnewPrice.appendChild(contentforNewPrice);
     }
+    
 }
