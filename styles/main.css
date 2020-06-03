@@ -12,6 +12,7 @@ li{
 button{
     margin:0px;
 }
+p{margin:0px;}
 .logo{
     width:30px;
     margin-left:5px;
@@ -83,10 +84,16 @@ button{
 .cartName{
     font-size:12px;
     font-weight:400;
+    width:40px;
+}
+.divPrice{
+   width:20px;
+   height:30px;
+   display:flex;
+   
 }
 .cartPrice{
     font-size:12px;
-    
 }
 .cartButton{
     width:20px;

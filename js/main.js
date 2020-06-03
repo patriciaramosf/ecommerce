@@ -23,7 +23,7 @@ export const printItems= () => {
         const contentforDescription= document.createTextNode(item.description);
         const contentforName= document.createTextNode(item.name);
         const contentforButton= document.createTextNode('Add to my cart');
-        const contentforOriginalPrice= document.createTextNode(item.prices.noDiscount);
+        const contentforOriginalPrice= document.createTextNode(`${item.prices.noDiscount}€`); 
         const contentforNewPrice= document.createTextNode(item.prices.Discount);
         const textOption1 = document.createTextNode('1');
         const textOption2 = document.createTextNode('2');
@@ -81,7 +81,6 @@ export const printItems= () => {
         itemDescription.appendChild(contentforDescription);
         itemButton.appendChild(contentforButton);
         itemoriginalPrice.appendChild(contentforOriginalPrice);
-        itemnewPrice.appendChild(contentforNewPrice);
-        
+        itemnewPrice.appendChild(contentforNewPrice); 
     }
 }
