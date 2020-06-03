@@ -66,6 +66,8 @@ p{margin:0px;}
     flex-direction: column;
     margin-top:20px;
     justify-content: center;
+    max-height:300px;
+    overflow-y:scroll;
 }
 .row{
     display:flex;

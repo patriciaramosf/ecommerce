@@ -3,7 +3,8 @@ import { printItems } from './main.js';
 printItems();
 
 const buttons = document.querySelectorAll('#addingtoCart');
-const cartList= document.querySelector('.body__cartList');
+const cartList = document.querySelector('.body__cartList');
+const cleanCartButton = document.querySelector('.cleanCart');
 
 addListenerButtons()
 
@@ -11,7 +12,7 @@ function addListenerButtons(){
     for(let button of buttons){
        button.addEventListener('click', getMeal);
     }
-    
+    cleanCartButton.addEventListener('click', clearCart);
 }
 
 function getMeal(e){  
@@ -75,4 +76,11 @@ function removeMeal(e){
     e.preventDefault();
     const mealtoRemove = e.target.parentElement;
     mealtoRemove.remove();
+}
+
+function clearCart(e){
+    e.preventDefault();
+    while(cartList.firstChild){
+        cartList.removeChild(cartList.firstChild);
+    }
 }
