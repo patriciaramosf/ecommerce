@@ -49,8 +49,8 @@ export const printItems= () => {
         option5.setAttribute('class', 'option');
         itemName.setAttribute('class', 'card-title');
         itemDescription.setAttribute('class', 'card-text');
-        itemoriginalPrice.setAttribute('class', 'originalPrice')
-        itemnewPrice.setAttribute('class', 'newPrice')
+        itemoriginalPrice.setAttribute('class', 'originalPrice');
+        itemnewPrice.setAttribute('class', 'newPrice');
         itemButton.setAttribute('class', 'btn btn-danger');
         itemButton.setAttribute('id', 'addingtoCart');
         itemButton.style='position:absolute; left:18px; color:white';
@@ -81,6 +81,6 @@ export const printItems= () => {
         itemDescription.appendChild(contentforDescription);
         itemButton.appendChild(contentforButton);
         itemoriginalPrice.appendChild(contentforOriginalPrice);
-        itemnewPrice.appendChild(contentforNewPrice); 
+        itemnewPrice.appendChild(contentforNewPrice);
     }
 }

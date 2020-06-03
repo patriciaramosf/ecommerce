@@ -5,8 +5,11 @@ printItems();
 const buttons = document.querySelectorAll('#addingtoCart');
 const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
+const totalPrice = document.querySelector('.totalPrice');
+const newPrice = document.querySelectorAll('.newPrice');
+const newPriceArr = Array.prototype.slice.call(newPrice);
 
-addListenerButtons()
+addListenerButtons();
 
 function addListenerButtons(){
     for(let button of buttons){
@@ -29,7 +32,9 @@ function getMealInfo(meal){
         prices:meal.querySelector('.newPrice').textContent,
         select:meal.querySelector('select'),
     }
-    addMealInfo(mealInfo)
+    addMealInfo(mealInfo);
+  /*   increaseTotalCart(newPriceArr)
+    console.log(newPriceArr[2]); */
 }
 
 function addMealInfo(meal){
@@ -60,7 +65,7 @@ function addMealInfo(meal){
         row.appendChild(name);
         row.appendChild(divPrice);
         row.appendChild(button);
-        
+
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
     }
@@ -84,3 +89,11 @@ function clearCart(e){
         cartList.removeChild(cartList.firstChild);
     }
 }
+
+/* function increaseTotalCart(newPrice){
+    let total = 0;
+    for(let myPrice of newPrice){
+       total += myPrice;
+    }
+   totalPrice.innerHTML=(`Total: ${total}€`);
+} */
