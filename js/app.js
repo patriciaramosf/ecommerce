@@ -13,10 +13,12 @@ function addListenerButtons(){
     }
     
 }
+
 function getMeal(e){  
     const meal = e.target.parentElement.parentElement;
     getMealInfo(meal);
 }
+
 function getMealInfo(meal){
     const mealInfo = {
         id : meal.querySelector('div').getAttribute('id'),
@@ -35,7 +37,7 @@ function addMealInfo(meal){
         const name = document.createElement('h5');
         const divPrice = document.createElement('div');
         const price = document.createElement('p');
-        const button = document.createElement('div');
+        const button = document.createElement('button');
         const nameText= document.createTextNode(meal.name);
         const priceText= document.createTextNode(`${meal.prices*meal.select.value}€`);
         const buttonText= document.createTextNode('x');
@@ -51,11 +53,26 @@ function addMealInfo(meal){
         name.appendChild(nameText);
         price.appendChild(priceText);
         divPrice.appendChild(price);
-
         button.appendChild(buttonText);
         cartList.appendChild(row);
         row.appendChild(image);
         row.appendChild(name);
         row.appendChild(divPrice);
         row.appendChild(button);
+        
+        const removeButtons = document.querySelectorAll('.cartButton');
+        addListenerRemoveButtons(removeButtons);
     }
+
+
+function addListenerRemoveButtons (removeButtons){
+    for(let removeButton of removeButtons){
+        removeButton.addEventListener('click', removeMeal)
+    }
+}
+
+function removeMeal(e){
+    e.preventDefault();
+    const mealtoRemove = e.target.parentElement;
+    mealtoRemove.remove();
+}
