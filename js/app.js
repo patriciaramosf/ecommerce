@@ -115,7 +115,7 @@ function readLocalStorage(){
         const price = document.createElement('p');
         const button = document.createElement('button');
         const nameText= document.createTextNode(meal.name);
-        const priceText= document.createTextNode(`${meal.prices*meal.select.value}€`);
+        const priceText= document.createTextNode(`${meal.prices}€/u`);
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');
