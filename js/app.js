@@ -5,8 +5,6 @@ printItems();
 const buttons = document.querySelectorAll('#addingtoCart');
 const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
-const totalPrice = document.querySelector('.totalPrice');
-const newPrice = document.querySelectorAll('.newPrice');
 
 addListenerButtons();
 
@@ -24,7 +22,6 @@ function getMeal(e){
 
 function getMealInfo(meal){
     const mealInfo = {
-        id : meal.querySelector('div').getAttribute('id'),
         image: meal.querySelector('img').src,
         name: meal.querySelector('h5').textContent,
         description: meal.querySelector('.card-text').textContent,
@@ -32,7 +29,6 @@ function getMealInfo(meal){
         select:meal.querySelector('select'),
     }
     addMealInfo(mealInfo);
-    /* increaseTotalCart(newPrice); */
 }
 
 function addMealInfo(meal){
@@ -47,6 +43,7 @@ function addMealInfo(meal){
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');
+        row.setAttribute('id', meal.name);
         button.setAttribute('class', 'cartButton');
         image.setAttribute('class', 'cartImg');
         name.setAttribute('class','cartName');
@@ -66,6 +63,7 @@ function addMealInfo(meal){
 
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
+        setlLocalStorage(meal);
     }
 
 
@@ -88,10 +86,20 @@ function clearCart(e){
     }
 }
 
-/* function increaseTotalCart(newPrice){
-    let total = 0;
-    for(let myPrice of newPrice){
-       total += myPrice;
+function setlLocalStorage(meal){
+  let meals=[];
+  meals = getLocalStorage();
+    meals.push(meal);
+    localStorage.setItem('meals', JSON.stringify(meals));
+}
+
+function getLocalStorage(){
+   let meals;
+   if(localStorage.getItem('meals') === null){
+    meals =[];
+    } else {
+        meals=JSON.parse(localStorage.getItem('meals'));
     }
-   totalPrice.innerHTML=(`Total: ${total}€`);
-} */
+    return meals;
+}
+
