@@ -13,6 +13,7 @@ function addListenerButtons(){
        button.addEventListener('click', getMeal);
     }
     cleanCartButton.addEventListener('click', clearCart);
+   document.addEventListener('DOMContentLoaded', readLocalStorage);
 }
 
 function getMeal(e){  
@@ -101,5 +102,42 @@ function getLocalStorage(){
         meals=JSON.parse(localStorage.getItem('meals'));
     }
     return meals;
+}
+
+function readLocalStorage(){
+    let mealLs;
+    mealLs = getLocalStorage();
+    mealLs.forEach(function(meal){
+        const row = document.createElement('div');
+        const image = document.createElement('img');
+        const name = document.createElement('h5');
+        const divPrice = document.createElement('div');
+        const price = document.createElement('p');
+        const button = document.createElement('button');
+        const nameText= document.createTextNode(meal.name);
+        const priceText= document.createTextNode(`${meal.prices*meal.select.value}€`);
+        const buttonText= document.createTextNode('x');
+    
+        row.setAttribute('class', 'row');
+        row.setAttribute('id', meal.name);
+        button.setAttribute('class', 'cartButton');
+        image.setAttribute('class', 'cartImg');
+        name.setAttribute('class','cartName');
+        divPrice.setAttribute('class', 'divPrice');
+        price.setAttribute('class','cartPrice');
+    
+        image.src=meal.image;
+        name.appendChild(nameText);
+        price.appendChild(priceText);
+        divPrice.appendChild(price);
+        button.appendChild(buttonText);
+        cartList.appendChild(row);
+        row.appendChild(image);
+        row.appendChild(name);
+        row.appendChild(divPrice);
+        row.appendChild(button);
+        const removeButtons = document.querySelectorAll('.cartButton');
+        addListenerRemoveButtons(removeButtons);
+    })
 }
 
