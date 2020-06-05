@@ -13,7 +13,8 @@ function addListenerButtons(){
        button.addEventListener('click', getMeal);
     }
     cleanCartButton.addEventListener('click', clearCart);
-   document.addEventListener('DOMContentLoaded', readLocalStorage);
+    document.addEventListener('DOMContentLoaded', readLocalStorage);
+   
 }
 
 function getMeal(e){  
@@ -23,6 +24,7 @@ function getMeal(e){
 
 function getMealInfo(meal){
     const mealInfo = {
+        id:meal.id,
         image: meal.querySelector('img').src,
         name: meal.querySelector('h5').textContent,
         description: meal.querySelector('.card-text').textContent,
@@ -44,7 +46,7 @@ function addMealInfo(meal){
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');
-        row.setAttribute('id', meal.name);
+        row.setAttribute('id', meal.id);
         button.setAttribute('class', 'cartButton');
         image.setAttribute('class', 'cartImg');
         name.setAttribute('class','cartName');
@@ -78,6 +80,10 @@ function removeMeal(e){
     e.preventDefault();
     const mealtoRemove = e.target.parentElement;
     mealtoRemove.remove();
+    const mealLS = e.target.parentElement;
+    const mealIdLS= mealLS.querySelector('button').getAttribute('id')
+    deleteMealLocalStorage(mealIdLS);
+    console.log(mealIdLS);
 }
 
 function clearCart(e){
@@ -85,6 +91,7 @@ function clearCart(e){
     while(cartList.firstChild){
         cartList.removeChild(cartList.firstChild);
     }
+    clearCartLocalStorage()
 }
 
 function setlLocalStorage(meal){
@@ -119,8 +126,8 @@ function readLocalStorage(){
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');
-        row.setAttribute('id', meal.name);
         button.setAttribute('class', 'cartButton');
+        button.setAttribute('id', meal.id);
         image.setAttribute('class', 'cartImg');
         name.setAttribute('class','cartName');
         divPrice.setAttribute('class', 'divPrice');
@@ -141,3 +148,14 @@ function readLocalStorage(){
     })
 }
 
+function deleteMealLocalStorage(mealIdLS){
+    let mealsLS;
+    mealsLS = getLocalStorage();
+    const findMeal = mealsLS.findIndex(meals=>meals.id===mealIdLS);
+    mealsLS.splice(findMeal,1);
+    localStorage.setItem('meals', JSON.stringify(mealsLS));
+}
+
+function clearCartLocalStorage(){
+    localStorage.clear();
+}

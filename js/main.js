@@ -19,6 +19,11 @@ export const printItems= () => {
         const option3 = document.createElement('option');
         const option4 = document.createElement('option');
         const option5 = document.createElement('option');
+        option1.value=1;
+        option2.value=2;
+        option3.value=3;
+        option4.value=4;
+        option5.value=5;
 
         const contentforDescription= document.createTextNode(item.description);
         const contentforName= document.createTextNode(item.name);
@@ -84,5 +89,4 @@ export const printItems= () => {
         itemoriginalPrice.appendChild(contentforOriginalPrice);
         itemnewPrice.appendChild(contentforNewPrice);
     }
-    
 }
