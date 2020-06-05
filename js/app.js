@@ -83,7 +83,6 @@ function removeMeal(e){
     const mealLS = e.target.parentElement;
     const mealIdLS= mealLS.querySelector('button').getAttribute('id')
     deleteMealLocalStorage(mealIdLS);
-    console.log(mealIdLS);
 }
 
 function clearCart(e){
