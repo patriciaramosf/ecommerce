@@ -68,6 +68,8 @@ function addMealInfo(meal){
         row.appendChild(name);
         row.appendChild(divPrice);
         row.appendChild(button);
+        const removeButtons = document.querySelectorAll('.cartButton');
+        addListenerRemoveButtons(removeButtons);
         setlLocalStorage(meal)
     }
 
