@@ -32,6 +32,7 @@ p{margin:0px;}
 #buttonCart:hover{
     color:white;
 }
+
 .form-inline #cart{
     display: none;
 }
@@ -180,6 +181,10 @@ p{margin:0px;}
     height:380px;
     margin-right:40px;
 }
+.card-img-top:hover{
+opacity: 0.6;
+transition:0.4s;
+}
 .select{
     width:35px;
     height:30px;
@@ -201,6 +206,27 @@ p{margin:0px;}
 }
 .newPrice{
     font-weight: 900;
+}
+.warning{
+    border:#dc3545 2px solid;
+    border-style: dotted;
+    background-color:rgba(201, 189, 189, 0.6);
+    position:absolute;
+    right:0px;
+    color:white;
+    font-size:14px;
+    width:60px;
+    height:50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hidden{
+    display:none;
+}
+.apper{
+    display:block;
 }
 
 @media all and (min-width: 700px) {

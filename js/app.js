@@ -64,9 +64,13 @@ function addMealInfo(meal){
         row.appendChild(divPrice);
         row.appendChild(button);
 
+       /*  const warning = document.querySelector('.warning');
+        warning.classList.remove('hidden');
+        warning.classList.add('appear');
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
         setlLocalStorage(meal);
+        console.log(warning) */
     }
 
 
