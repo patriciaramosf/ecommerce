@@ -5,7 +5,6 @@ printItems();
 const buttons = document.querySelectorAll('#addingtoCart');
 const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
-const buttonCart = document.querySelector('#buttonCart')
 const iconCart= document.querySelector('.fa-shopping-cart')
 
 addListenerButtons();
@@ -22,10 +21,10 @@ function addListenerButtons(){
 function getMeal(e){  
     const meal = e.target.parentElement.parentElement;
     iconCart.classList.add('animate');
-    getMealInfo(meal);
     setInterval(function() {
     iconCart.classList.remove('animate');
     }, 1000);
+    getMealInfo(meal);
 }
 
 function getMealInfo(meal){
@@ -69,6 +68,7 @@ function addMealInfo(meal){
         row.appendChild(name);
         row.appendChild(divPrice);
         row.appendChild(button);
+        setlLocalStorage(meal)
     }
 
 
