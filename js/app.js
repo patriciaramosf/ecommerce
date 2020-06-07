@@ -23,7 +23,7 @@ function getMeal(e){
     iconCart.classList.add('animate');
     setInterval(function() {
     iconCart.classList.remove('animate');
-    }, 1000);
+    }, 6000);
     getMealInfo(meal);
 }
 
