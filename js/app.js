@@ -5,7 +5,9 @@ printItems();
 const buttons = document.querySelectorAll('#addingtoCart');
 const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
-const iconCart= document.querySelector('.fa-shopping-cart')
+const iconCart= document.querySelector('.fa-shopping-cart');
+
+let selectedMeals= getLocalStorage();
 
 addListenerButtons();
 
@@ -23,7 +25,7 @@ function getMeal(e){
     iconCart.classList.add('animate');
     setInterval(function() {
     iconCart.classList.remove('animate');
-    }, 6000);
+    }, 2000);
     getMealInfo(meal);
 }
 
@@ -39,7 +41,10 @@ function getMealInfo(meal){
     addMealInfo(mealInfo);
 }
 
+
 function addMealInfo(meal){
+    if(selectedMeals.indexOf(meal.id) === -1){
+        selectedMeals.push(meal.id);
         const row = document.createElement('div');
         const image = document.createElement('img');
         const name = document.createElement('h5');
@@ -71,7 +76,10 @@ function addMealInfo(meal){
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
         setlLocalStorage(meal)
+    }else{
+        alert('You alredy have this 🍣 in your cart!')
     }
+}
 
 
 function addListenerRemoveButtons (removeButtons){
@@ -150,7 +158,6 @@ function readLocalStorage(){
         addListenerRemoveButtons(removeButtons);
     })
 }
-
 function deleteMealLocalStorage(mealIdLS){
     let mealsLS;
     mealsLS = getLocalStorage();

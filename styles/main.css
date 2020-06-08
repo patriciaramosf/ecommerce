@@ -208,13 +208,10 @@ transition:0.4s;
     font-weight: 900;
 }
 .animate{
-    transition: color 1s;
-    -webkit-transition: color 1s;
     animation-name: bounce;
     -webkit-animation-name: bounce;
-    animation-duration:2s;
+    animation-duration:1s;
     animation-iteration-count: 1;
-    color:darkgrey;
     }
 
 @media all and (min-width: 700px) {
