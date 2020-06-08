@@ -5,9 +5,9 @@ printItems();
 const buttons = document.querySelectorAll('#addingtoCart');
 const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
-const iconCart= document.querySelector('.fa-shopping-cart');
+const iconCart = document.querySelector('.fa-shopping-cart');
 
-let selectedMeals= getLocalStorage();
+let selectedMeals = getLocalStorage();
 
 addListenerButtons();
 
@@ -92,6 +92,7 @@ function removeMeal(e){
     e.preventDefault();
     const mealtoRemove = e.target.parentElement;
     mealtoRemove.remove();
+    selectedMeals.splice(e,1)
     const mealLS = e.target.parentElement;
     const mealIdLS= mealLS.querySelector('button').getAttribute('id')
     deleteMealLocalStorage(mealIdLS);
@@ -168,4 +169,5 @@ function deleteMealLocalStorage(mealIdLS){
 
 function clearCartLocalStorage(){
     localStorage.clear();
+    selectedMeals = [];
 }
