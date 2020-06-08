@@ -41,7 +41,6 @@ function getMealInfo(meal){
     addMealInfo(mealInfo);
 }
 
-
 function addMealInfo(meal){
     if(selectedMeals.indexOf(meal.id) === -1){
         selectedMeals.push(meal.id);
@@ -56,6 +55,7 @@ function addMealInfo(meal){
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');
+        row.setAttribute('value', meal.select.value);
         row.setAttribute('id', meal.id);
         button.setAttribute('class', 'cartButton');
         image.setAttribute('class', 'cartImg');
@@ -75,9 +75,9 @@ function addMealInfo(meal){
         row.appendChild(button);
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
-        setlLocalStorage(meal)
+        setlLocalStorage(meal);
     }else{
-        alert('You alredy have this 🍣 in your cart!')
+        alert(`🍣 You alredy have ${meal.name} in your cart!`)
     }
 }
 
@@ -134,7 +134,7 @@ function readLocalStorage(){
         const price = document.createElement('p');
         const button = document.createElement('button');
         const nameText= document.createTextNode(meal.name);
-        const priceText= document.createTextNode(`${meal.prices}€/u`);
+        const priceText= document.createTextNode(`${meal.prices*2}€`);
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');
