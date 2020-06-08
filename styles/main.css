@@ -1,3 +1,6 @@
+html{
+    width:100vw;
+}
 .body{
     height:100vh;
     font-family: 'Roboto', sans-serif;
@@ -20,7 +23,7 @@ p{margin:0px;}
 .navbar{
     position: fixed;
     top:0px;
-    width:100vw;
+    width:100%;
     z-index:1;
 }
 .form-inline{
@@ -28,6 +31,7 @@ p{margin:0px;}
 }
 #buttonCart{
     color:#dc3545;
+    margin-right:20px;
 }
 #buttonCart:hover{
     color:white;
@@ -141,7 +145,7 @@ p{margin:0px;}
 }
 .hero{
     position: relative;
-    width:100vw;
+    width:100%;
 } 
 
 .Info{
