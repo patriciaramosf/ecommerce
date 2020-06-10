@@ -8,7 +8,6 @@ const cleanCartButton = document.querySelector('.cleanCart');
 const iconCart = document.querySelector('.fa-shopping-cart');
 
 let selectedMeals = getLocalStorage();
-
 addListenerButtons();
 
 function addListenerButtons(){
@@ -35,8 +34,8 @@ function getMealInfo(meal){
         image: meal.querySelector('img').src,
         name: meal.querySelector('h5').textContent,
         description: meal.querySelector('.card-text').textContent,
-        prices:meal.querySelector('.newPrice').textContent,
         select:meal.querySelector('select'),
+        prices: parseInt(meal.querySelector('.newPrice').textContent)   
     }
     addMealInfo(mealInfo);
 }
@@ -50,9 +49,10 @@ function addMealInfo(meal){
         const divPrice = document.createElement('div');
         const price = document.createElement('p');
         const button = document.createElement('button');
-        const nameText= document.createTextNode(meal.name);
-        const priceText= document.createTextNode(`${meal.prices*meal.select.value}€`);
-        const buttonText= document.createTextNode('x');
+        const nameText = document.createTextNode(meal.name);
+        meal.quantity = meal.select.value;
+        const priceText = document.createTextNode(`${ meal.prices * meal.quantity }€`);
+        const buttonText = document.createTextNode('x');
     
         row.setAttribute('class', 'row');
         row.setAttribute('value', meal.select.value);
@@ -134,7 +134,7 @@ function readLocalStorage(){
         const price = document.createElement('p');
         const button = document.createElement('button');
         const nameText= document.createTextNode(meal.name);
-        const priceText= document.createTextNode(`${meal.prices*2}€`);
+        const priceText= document.createTextNode(`${ meal.prices * meal.quantity}€`);
         const buttonText= document.createTextNode('x');
     
         row.setAttribute('class', 'row');

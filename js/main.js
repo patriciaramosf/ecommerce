@@ -89,12 +89,5 @@ export const printItems= () => {
         itemoriginalPrice.appendChild(contentforOriginalPrice);
         itemnewPrice.appendChild(contentforNewPrice);
 
-        /* const warning = document.createElement('div');
-        warning.setAttribute('class', 'warning');
-        const contentWarning= document.createTextNode('Added to cart');
-        warning.appendChild(contentWarning);
-        itemCard.appendChild(warning);
-        warning.classList.add('hidden'); */
-
     }
 }
