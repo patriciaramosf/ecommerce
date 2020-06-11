@@ -6,6 +6,7 @@ const buttons = document.querySelectorAll('#addingtoCart');
 const cartList = document.querySelector('.body__cartList');
 const cleanCartButton = document.querySelector('.cleanCart');
 const iconCart = document.querySelector('.fa-shopping-cart');
+const totalPrice = document.querySelector('.totalPrice');
 
 let selectedMeals = getLocalStorage();
 addListenerButtons();
@@ -39,10 +40,18 @@ function getMealInfo(meal){
     }
     addMealInfo(mealInfo);
 }
+function sumTotalPrice(selectedMeals){
+    let value=0;
+    const reducer = (accumulator, singleMeal)=> {
+        return accumulator + (singleMeal.prices* singleMeal.quantity);
+    }
+    const total = selectedMeals.reduce(reducer, value)
+        totalPrice.innerHTML = (`Total: ${total}€`);
+   }
 
 function addMealInfo(meal){
     if(selectedMeals.indexOf(meal.id) === -1){
-        selectedMeals.push(meal.id);
+        selectedMeals.push(meal);
         const row = document.createElement('div');
         const image = document.createElement('img');
         const name = document.createElement('h5');
@@ -79,6 +88,7 @@ function addMealInfo(meal){
     }else{
         alert(`🍣 You alredy have ${meal.name} in your cart!`)
     }
+    sumTotalPrice(selectedMeals)
 }
 
 
@@ -92,10 +102,11 @@ function removeMeal(e){
     e.preventDefault();
     const mealtoRemove = e.target.parentElement;
     mealtoRemove.remove();
-    selectedMeals.splice(e,1)
+    selectedMeals.splice(e,1);
     const mealLS = e.target.parentElement;
-    const mealIdLS= mealLS.querySelector('button').getAttribute('id')
+    const mealIdLS= mealLS.querySelector('button').getAttribute('id');
     deleteMealLocalStorage(mealIdLS);
+    sumTotalPrice(selectedMeals);
 }
 
 function clearCart(e){
@@ -103,7 +114,8 @@ function clearCart(e){
     while(cartList.firstChild){
         cartList.removeChild(cartList.firstChild);
     }
-    clearCartLocalStorage()
+    clearCartLocalStorage();
+    sumTotalPrice(selectedMeals);
 }
 
 function setlLocalStorage(meal){
@@ -157,6 +169,7 @@ function readLocalStorage(){
         row.appendChild(button);
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
+        sumTotalPrice(selectedMeals);
     })
 }
 function deleteMealLocalStorage(mealIdLS){
