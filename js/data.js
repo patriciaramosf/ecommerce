@@ -40,7 +40,7 @@ export const DATA = [
           }
       },
        {
-          id:'7',
+          id:'5',
           name:'Rice bowl',
           description:'A basic.',
           image:'https://images.unsplash.com/photo-1562158074-d16650a22f83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60',

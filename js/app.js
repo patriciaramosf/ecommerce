@@ -43,14 +43,15 @@ function getMealInfo(meal){
 function sumTotalPrice(selectedMeals){
     let value=0;
     const reducer = (accumulator, singleMeal)=> {
-        return accumulator + (singleMeal.prices* singleMeal.quantity);
+        const totalSinglePrice = singleMeal.prices* singleMeal.quantity;
+        return accumulator + (totalSinglePrice);
     }
     const total = selectedMeals.reduce(reducer, value)
         totalPrice.innerHTML = (`Total: ${total}€`);
    }
 
 function addMealInfo(meal){
-    if(selectedMeals.indexOf(meal.id) === -1){
+    if(selectedMeals.indexOf(meal) === -1){
         selectedMeals.push(meal);
         const row = document.createElement('div');
         const image = document.createElement('img');
@@ -67,6 +68,7 @@ function addMealInfo(meal){
         row.setAttribute('value', meal.select.value);
         row.setAttribute('id', meal.id);
         button.setAttribute('class', 'cartButton');
+        button.setAttribute('id', meal.id);
         image.setAttribute('class', 'cartImg');
         name.setAttribute('class','cartName');
         divPrice.setAttribute('class', 'divPrice');
@@ -85,10 +87,10 @@ function addMealInfo(meal){
         const removeButtons = document.querySelectorAll('.cartButton');
         addListenerRemoveButtons(removeButtons);
         setlLocalStorage(meal);
+        sumTotalPrice(selectedMeals)
     }else{
         alert(`🍣 You alredy have ${meal.name} in your cart!`)
     }
-    sumTotalPrice(selectedMeals)
 }
 
 
@@ -101,11 +103,13 @@ function addListenerRemoveButtons (removeButtons){
 function removeMeal(e){
     e.preventDefault();
     const mealtoRemove = e.target.parentElement;
+    const cartList = [...e.target.parentElement.parentElement.children];
+    console.log(cartList.indexOf(mealtoRemove))
+    const mealIdLS = mealtoRemove.querySelector('button').getAttribute('id');
     mealtoRemove.remove();
-    selectedMeals.splice(e,1);
-    const mealLS = e.target.parentElement;
-    const mealIdLS= mealLS.querySelector('button').getAttribute('id');
+    const elemIndex = cartList.indexOf(mealtoRemove);
     deleteMealLocalStorage(mealIdLS);
+    selectedMeals.splice(elemIndex, 1);
     sumTotalPrice(selectedMeals);
 }
 
