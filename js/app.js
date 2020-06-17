@@ -88,6 +88,7 @@ function addMealInfo(meal){
         addListenerRemoveButtons(removeButtons);
         setlLocalStorage(meal);
         sumTotalPrice(selectedMeals)
+        console.log(cartList)
     }else{
         alert(`🍣 You alredy have ${meal.name} in your cart!`)
     }
@@ -104,10 +105,9 @@ function removeMeal(e){
     e.preventDefault();
     const mealtoRemove = e.target.parentElement;
     const cartList = [...e.target.parentElement.parentElement.children];
-    console.log(cartList.indexOf(mealtoRemove))
     const mealIdLS = mealtoRemove.querySelector('button').getAttribute('id');
-    mealtoRemove.remove();
     const elemIndex = cartList.indexOf(mealtoRemove);
+    mealtoRemove.remove();
     deleteMealLocalStorage(mealIdLS);
     selectedMeals.splice(elemIndex, 1);
     sumTotalPrice(selectedMeals);
